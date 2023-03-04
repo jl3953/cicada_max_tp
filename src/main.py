@@ -78,7 +78,7 @@ def main():
     for cfg_fpath in cfg_lt_tuples:
         # generate config object
         cfg = generate_configs.generate_configs_from_files_and_add_fields(
-            cfg_fpath
+            cfg_fpath[0]
         )
 
         # make directory in which trial will be run
@@ -93,9 +93,6 @@ def main():
             os.makedirs(logs_dir)
 
         # copy over config into directory
-        for k, v in cfg.items():
-            print(k, v)
-
         system_utils.call(
             "cp {0} {1}".format(
                 cfg[constants.CONFIG_FPATH_KEY], logs_dir
