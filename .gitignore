@@ -1,2 +1,4 @@
 .idea
 src/trial_*.py
+config/*
+__pychache__
