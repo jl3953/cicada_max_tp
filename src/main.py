@@ -93,6 +93,9 @@ def main():
             os.makedirs(logs_dir)
 
         # copy over config into directory
+        for k, v in cfg:
+            print(k, v)
+
         system_utils.call(
             "cp {0} {1}".format(
                 cfg[constants.CONFIG_FPATH_KEY], logs_dir
