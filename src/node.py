@@ -9,3 +9,20 @@ class Node:
 
     def __hash__(self):
         return hash(self.ip)
+
+    def __eq__(self, other):
+        if self.ip == other.ip:
+            if (not hasattr(self, "region") and not hasattr(other,
+                                                            "region") and not hasattr(
+                self, "store")
+                    and not hasattr(other, "store")):
+                return True
+            elif (hasattr(self, "region") and hasattr(other,
+                                                      "region") and self.region == other.region and
+                  hasattr(self, "store") and hasattr(other,
+                                                     "store") and self.store == other.store):
+                return True
+            else:
+                return False
+        else:
+            return False
