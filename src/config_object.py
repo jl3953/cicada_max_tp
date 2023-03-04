@@ -11,6 +11,10 @@ class ConfigObject:
     """Represents different combinations of configuration parameters."""
 
     def __init__(self):
+
+        # test driver
+        self.logs_dir = ["test"]
+
         # clients
         self.clients = [
             [node.Node(2), node.Node(3), node.Node(4), node.Node(5)]]
