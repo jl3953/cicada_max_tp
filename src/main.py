@@ -75,14 +75,11 @@ def main():
         files_to_process, has_header=False
     )
 
-    for cfg_fpath, lt_fpath in cfg_lt_tuples:
+    for cfg_fpath in cfg_lt_tuples:
         # generate config object
         cfg = generate_configs.generate_configs_from_files_and_add_fields(
             cfg_fpath
         )
-
-        # generate lt_config objects that match those config objects
-        lt_cfg = config_io.read_config_from_file(lt_fpath)
 
         # make directory in which trial will be run
         logs_dir = generate_dir_name(
