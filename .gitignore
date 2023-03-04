@@ -1,4 +1,5 @@
 .idea
 src/trial_*.py
 config/*
-__pychache__
+__pycache__
+scratch/*
