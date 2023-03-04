@@ -93,7 +93,7 @@ def main():
             os.makedirs(logs_dir)
 
         # copy over config into directory
-        for k, v in cfg:
+        for k, v in cfg.iteritems():
             print(k, v)
 
         system_utils.call(
