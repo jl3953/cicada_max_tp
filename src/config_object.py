@@ -17,7 +17,8 @@ class ConfigObject:
 
         # clients
         self.clients = [
-            [node.Node(2), node.Node(3), node.Node(4), node.Node(5)]]
+            [vars(node.Node(2)), vars(node.Node(3)), vars(node.Node(4)),
+             vars(node.Node(5))]]
         self.client_branch = ["maxTP"]
         self.client_concurrency = [8, 16]
         self.client_batch_size = [10]  # txns / rpc call
@@ -26,7 +27,8 @@ class ConfigObject:
         self.duration = [30]  # in seconds
 
         # servers
-        self.servers = [[node.Node(12), node.Node(13), node.Node(14)]]
+        self.servers = [
+            [vars(node.Node(12)), vars(node.Node(13)), vars(node.Node(14))]]
         self.server_branch = ["postDeadline"]
         self.server_concurrency = [4, 8, 15]
         self.server_batch_size = [5]  # txns / replication call
